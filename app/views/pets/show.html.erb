@@ -1,4 +1,4 @@
 <h1>Detalhes do Pet</h1>
 <h2><%= @pet.name %></h2>
 <p><strong>Idade:</strong> <%= @pet.age %> <%= I18n.translate(:year, count: @pet.age) %></p>
-<p><strong>Peso:</strong> <%= number_with_delimiter(@pet.weight, delimiter: '.', separator: ',') %> kg</p>
+<p><strong>Peso:</strong> <%= number_with_delimiter(@pet.weight) %> kg</p>
