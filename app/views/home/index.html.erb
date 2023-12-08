@@ -1,0 +1,7 @@
+<% if @pets.empty? %>
+  <p>Não existem pets cadastrados</p>
+<% else %>
+  <% @pets.each do |pet| %>
+    <%= link_to(pet.name, pet)%>
+  <% end %>
+<% end %>

@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      pet: Pet
+    attributes:
+      pet:
+        name: 'Nome'
+        birth_date: 'Data de Nascimento'
+        sex: 'Sexo'
+        specie: 'Espécie'
+        breed: 'Raça'
+        weight: 'Peso'
