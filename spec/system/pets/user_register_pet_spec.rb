@@ -30,7 +30,7 @@ describe 'Usuário cadastra pets' do
     fill_in "Sexo",	with: "Fêmea" 
     fill_in "Espécie",	with: "Cachorro" 
     fill_in "Raça",	with: "Lhasa" 
-    fill_in "Peso",	with: "4,5" 
+    fill_in "Peso",	with: "4.5" 
     click_on 'Salvar'
 
     # Assert

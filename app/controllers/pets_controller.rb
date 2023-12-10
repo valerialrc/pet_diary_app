@@ -16,7 +16,22 @@ class PetsController < ApplicationController
       flash.now[:notice] = 'Não foi possível cadastrar o pet.'
       render :new
     end
+  end
 
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+
+    if @pet.update(pet_params)
+      redirect_to pet_path(@pet.id), notice: 'Pet atualizado com sucesso!'
+    else
+      flash.now[:notice] = 'Não foi possível atualizar o pet.'
+      render :edit
+    end
+    
   end
 
   private

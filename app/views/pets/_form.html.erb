@@ -1,0 +1,44 @@
+<% if @pet.errors.any? %>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @pet.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @pet, local: true) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :birth_date %>
+    <%= form.date_field :birth_date %>
+  </div>
+
+  <div>
+    <%= form.label :sex %>
+    <%= form.text_field :sex %>
+  </div>
+
+  <div>
+    <%= form.label :specie %>
+    <%= form.text_field :specie %>
+  </div>
+  
+  <div>
+    <%= form.label :breed %>
+    <%= form.text_field :breed %>
+  </div>
+  
+  <div>
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar' %>
+  </div>
+<% end %>

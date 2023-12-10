@@ -2,3 +2,7 @@
 <h2><%= @pet.name %></h2>
 <p><strong>Idade:</strong> <%= @pet.age %> <%= I18n.translate(:year, count: @pet.age) %></p>
 <p><strong>Peso:</strong> <%= number_with_delimiter(@pet.weight) %> kg</p>
+
+<div>
+  <%= link_to('Editar', edit_pet_path(@pet))%>
+</div>
