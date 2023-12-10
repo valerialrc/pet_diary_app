@@ -6,3 +6,7 @@
 <div>
   <%= link_to('Editar', edit_pet_path(@pet))%>
 </div>
+
+<div>
+  <%= button_to('Remover', pet_path(@pet), method: :delete) %>
+</div>
