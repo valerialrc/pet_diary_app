@@ -15,8 +15,8 @@
           <h1>Agenda Pet</h1>
       <% end %>
       <nav>
-        <%= link_to('Cadastrar Pet', new_pet_path) %>
         <% if user_signed_in? %>
+          <%= link_to('Cadastrar Pet', new_pet_path) %>
           <%= current_user.description %>
           <%= button_to('Sair', destroy_user_session_path, method: :delete) %>
         <% else %>

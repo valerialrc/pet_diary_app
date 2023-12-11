@@ -3,8 +3,10 @@ require 'rails_helper'
 describe 'Usuário cadastra pets' do
   it 'a partir da tela inicial' do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Cadastrar Pet'
 
@@ -21,8 +23,10 @@ describe 'Usuário cadastra pets' do
 
   it 'com sucesso' do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Cadastrar Pet'
     fill_in "Nome",	with: "Jade" 
@@ -43,8 +47,10 @@ describe 'Usuário cadastra pets' do
 
   it 'com campo obrigatório em branco' do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Cadastrar Pet'
     fill_in "Nome",	with: "" 

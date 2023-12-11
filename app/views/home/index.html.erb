@@ -1,5 +1,10 @@
 <% if @pets.empty? %>
-  <p>Não existem pets cadastrados</p>
+  <% if user_signed_in? %>
+    <p>Não existem pets cadastrados</p>
+  <% else %>
+    <p>Faça login para visualizar a agenda</p>
+  <% end %>
+
 <% else %>
   <% @pets.each do |pet| %>
     <%= link_to(pet.name, pet)%>

@@ -3,10 +3,13 @@ require 'rails_helper'
 describe "Usuário edita um pet" do
   it "a partir da página de detalhes" do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
+
     pet = Pet.create!(name: 'Jade', birth_date: '14/04/2018', sex: 'Fêmea',
-                specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7)
+                      specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7, user: user)
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Jade'
     click_on 'Editar'
@@ -25,10 +28,13 @@ describe "Usuário edita um pet" do
 
   it "com sucesso" do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
+
     pet = Pet.create!(name: 'Jade', birth_date: '14/04/2018', sex: 'Fêmea',
-                specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7)
+                      specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7, user: user)
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Jade'
     click_on 'Editar'
@@ -46,10 +52,13 @@ describe "Usuário edita um pet" do
 
   it "e mantem os campos obrigatórios" do
     # Arrange
+    user = User.create!(name: 'João', email: 'joao@email.com', password: 'password')
+
     pet = Pet.create!(name: 'Jade', birth_date: '14/04/2018', sex: 'Fêmea',
-                specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7)
+                      specie: 'Cachorro', breed: 'Lhasa Apso', weight: 4.7, user: user)
 
     # Act
+    login_as(user)
     visit root_path
     click_on 'Jade'
     click_on 'Editar'

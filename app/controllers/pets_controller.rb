@@ -1,14 +1,15 @@
 class PetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pet, only: [:edit, :update, :show, :destroy]
   
   def show; end
 
   def new
-    @pet = Pet.new
+    @pet = current_user.pets.build
   end
 
   def create
-    @pet = Pet.new(pet_params)
+    @pet = current_user.pets.build(pet_params)
 
     if @pet.save
       redirect_to root_path, notice: 'Pet cadastrado com sucesso!'

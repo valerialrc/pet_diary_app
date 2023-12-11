@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
+  belongs_to :user
   validates :name, :birth_date, :sex, :specie, :breed, :weight, presence: true
 
   def age
